@@ -197,20 +197,22 @@ def team_names
   team_names
 end
 
-def player_numbers(player_name)
-  
+def player_numbers(team_name)
   player_numbers = []
   game_hash.each{|outer_k, outer_v|
+      
       outer_v.each{|inner_k, inner_v|
+        if outer_v[:team_name]
+          inner_v[:players].each{|number|
+            player_numbers.push(number)
+            binding.pry
+          }
         binding.pry
-        if inner_k[:players]
-          
         end
       }
     # binding.pry
   }
   player_numbers
-  
 end
 def player_stats(player_name)
   # returns the player stats of the given name
