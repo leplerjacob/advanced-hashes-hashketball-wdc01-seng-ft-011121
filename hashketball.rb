@@ -196,13 +196,16 @@ def team_names
   }
   team_names
 end
+
 def player_numbers(player_name)
-  # returns the jersey number of the given player
   
   player_numbers = []
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
         binding.pry
+        if inner_k[:players]
+          
+        end
       }
     # binding.pry
   }
