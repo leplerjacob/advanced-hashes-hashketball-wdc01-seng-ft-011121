@@ -213,11 +213,22 @@ def player_numbers(team_name)
 end
 def player_stats(player_name)
   # returns the player stats of the given name
+  stats = []
   game_hash.each{|outer_k, outer_v|
-    outer_v.each{|inner_k, inner_v|
-      binding.pry
-    }
-    binding.pry
+      outer_v.each{|inner_k, inner_v|
+        if inner_k == :players
+          inner_v.each{|player|
+            if player[:player_name] == player_name
+              
+              
+              binding.pry
+            end
+            # binding.pry
+          }
+        end
+        # binding.pry
+      }
+    # binding.pry
   }
 end
 def big_shoe_rebounds(player_name)
