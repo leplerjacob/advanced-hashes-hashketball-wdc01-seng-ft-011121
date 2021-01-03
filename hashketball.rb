@@ -192,7 +192,7 @@ def team_names
   # returns the team names
   team_names = []
   game_hash.each{|outer_k, outer_v|
-    team_names.push(outer_name[:team_name])
+    team_names.push(outer_v[:team_name])
   }
   team_names
 end
