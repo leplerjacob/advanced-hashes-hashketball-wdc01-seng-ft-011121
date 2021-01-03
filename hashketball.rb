@@ -150,6 +150,45 @@ def num_points_scored(player_name)
   points
 end
 
+def shoe_size(player_name)
+  # returns the shoe size of the given player
+  game_hash.each{|outer_k, outer_v|
+      outer_v.each{|inner_k, inner_v|
+        if inner_k == :players
+          inner_v.each{|player|
+            if player[:player_name] == player_name
+              points = player[:shoe_size]
+            end
+            # binding.pry
+          }
+        end
+        # binding.pry
+      }
+    # binding.pry
+  }
+  
+end
+def team_colors(team_name)
+  # returns the team colors
+  
+end
+def team_names
+  # returns the team names
+  
+end
+def player_numbers(player_name)
+  # returns the jersey number of the given player
+  
+end
+def player_stats(player_name)
+  # returns the player stats of the given name
+  
+end
+def big_shoe_rebounds(player_name)
+  # returns number of rebounds of the player with the biggest shoe size
+  
+end
+
 
 
 
