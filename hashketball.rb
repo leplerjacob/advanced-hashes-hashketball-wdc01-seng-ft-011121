@@ -176,29 +176,25 @@ end
 
 def team_colors(team_name)
   # returns the team colors
+  team_colors = nil
   game_hash.each{|outer_k, outer_v|
-      outer_v.each{|inner_k, inner_v|
-        if inner_k == :players
-          inner_v.each{|player|
-            if player[:player_name] == player_name
-              shoe_size = player[:shoe]
-              
-              # binding.pry
-            end
-            # binding.pry
-          }
-        end
-        # binding.pry
-      }
+      if outer_v[:team_name] == team_name
+        team_colors = outer_v[:colors]
+      end
     # binding.pry
   }
-  binding.pry
+  # binding.pry
+  team_colors
 end
 
 
 def team_names
   # returns the team names
-  
+  team_names = []
+  game_hash.each{|outer_k, outer_v|
+    team_names.push(outer_name[:team_name])
+  }
+  team_names
 end
 def player_numbers(player_name)
   # returns the jersey number of the given player
