@@ -202,7 +202,11 @@ def player_numbers(team_name)
   game_hash.each{|outer_k, outer_v|
       # binding.pry
       if outer_v[:team_name] == team_name
-        binding.pry
+        # binding.pry
+        outer_v[:players].each{|player|
+          player_numbers.push(player[:number])
+          # binding.pry
+        }
       end
   }
   player_numbers
