@@ -134,7 +134,6 @@ def num_points_scored(player_name)
   points = nil
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
-<<<<<<< HEAD
         if inner_k == :players
           inner_v.each{|player|
             if player[:player_name] == player_name
@@ -144,18 +143,6 @@ def num_points_scored(player_name)
           }
         end
         # binding.pry
-=======
-        
-        if inner_k == :players
-          inner_v.each{|player|
-            
-            binding.pry
-            
-          }
-        end
-        
-        binding.pry
->>>>>>> 090e9fcd37eff8fa37476fc82472b0c091ef64e9
       }
     # binding.pry
   }
@@ -171,7 +158,9 @@ def shoe_size(player_name)
         if inner_k == :players
           inner_v.each{|player|
             if player[:player_name] == player_name
-              shoe_size = player[:shoe_size]
+              shoe_size = player[:shoe]
+              
+              # binding.pry
             end
             # binding.pry
           }
@@ -179,14 +168,34 @@ def shoe_size(player_name)
         # binding.pry
       }
     # binding.pry
-    shoe_size
   }
   
+    shoe_size
 end
+
+
 def team_colors(team_name)
   # returns the team colors
-  
+  game_hash.each{|outer_k, outer_v|
+      outer_v.each{|inner_k, inner_v|
+        if inner_k == :players
+          inner_v.each{|player|
+            if player[:player_name] == player_name
+              shoe_size = player[:shoe]
+              
+              # binding.pry
+            end
+            # binding.pry
+          }
+        end
+        # binding.pry
+      }
+    # binding.pry
+  }
+  binding.pry
 end
+
+
 def team_names
   # returns the team names
   
