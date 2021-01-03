@@ -139,14 +139,10 @@ def num_points_scored(player_name)
             if player[:player_name] == player_name
               points = player[:points]
             end
-            # binding.pry
           }
         end
-        # binding.pry
       }
-    # binding.pry
   }
-  # binding.pry
   points
 end
 
@@ -159,18 +155,12 @@ def shoe_size(player_name)
           inner_v.each{|player|
             if player[:player_name] == player_name
               shoe_size = player[:shoe]
-              
-              # binding.pry
             end
-            # binding.pry
           }
         end
-        # binding.pry
       }
-    # binding.pry
   }
-  
-    shoe_size
+  shoe_size
 end
 
 
@@ -181,9 +171,7 @@ def team_colors(team_name)
       if outer_v[:team_name] == team_name
         team_colors = outer_v[:colors]
       end
-    # binding.pry
   }
-  # binding.pry
   team_colors
 end
 
@@ -200,12 +188,9 @@ end
 def player_numbers(team_name)
   player_numbers = []
   game_hash.each{|outer_k, outer_v|
-      # binding.pry
       if outer_v[:team_name] == team_name
-        # binding.pry
         outer_v[:players].each{|player|
           player_numbers.push(player[:number])
-          # binding.pry
         }
       end
   }
@@ -213,26 +198,35 @@ def player_numbers(team_name)
 end
 def player_stats(player_name)
   # returns the player stats of the given name
-  stats = []
+  stats = {}
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
         if inner_k == :players
           inner_v.each{|player|
             if player[:player_name] == player_name
-              
-              
-              binding.pry
+              stats = player
             end
-            # binding.pry
           }
         end
-        # binding.pry
       }
-    # binding.pry
   }
+  stats
 end
-def big_shoe_rebounds(player_name)
+
+
+
+def big_shoe_rebounds
   # returns number of rebounds of the player with the biggest shoe size
+  largest_shoe_size = 0
+  game_hash.each{|outer_k, outer_v|
+      outer_v.each{|inner_k, inner_v|
+        if inner_k == :players
+          inner_v.each{|player|
+            binding.pry
+          }
+        end
+      }
+  }
   
 end
 
