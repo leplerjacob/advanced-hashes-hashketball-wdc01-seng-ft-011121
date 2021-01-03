@@ -213,7 +213,12 @@ def player_numbers(team_name)
 end
 def player_stats(player_name)
   # returns the player stats of the given name
-  
+  game_hash.each{|outer_k, outer_v|
+    outer_v.each{|inner_k, inner_v|
+      binding.pry
+    }
+    binding.pry
+  }
 end
 def big_shoe_rebounds(player_name)
   # returns number of rebounds of the player with the biggest shoe size
