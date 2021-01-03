@@ -215,21 +215,22 @@ end
 
 def big_shoe_rebounds
   # returns number of rebounds of the player with the biggest shoe size
-  rebounds_of_player_with_largest_shoe = { name: "", shoe: 0 }
+  rebounds_of_player_with_largest_shoe = {}
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
         if inner_k == :players
+          binding.pry
+          rebounds_of_player_with_largest_shoe = inner_v.first
           inner_v.each{|player|
             if rebounds_of_player_with_largest_shoe[:shoe] < player[:shoe]
-              rebounds_of_player_with_largest_shoe[:name] = player[:player_name]
-              rebounds_of_player_with_largest_shoe[:shoe] = player[:shoe]
+              rebounds_of_player_with_largest_shoe = player
             end
-            binding.pry
           }
+          binding.pry
         end
       }
   }
-  rebounds_of_player_with_largest_shoe[:name]
+  rebounds_of_player_with_largest_shoe[:rebounds]
 end
 
 
