@@ -134,6 +134,7 @@ def num_points_scored(player_name)
   points = nil
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
+<<<<<<< HEAD
         if inner_k == :players
           inner_v.each{|player|
             if player[:player_name] == player_name
@@ -143,6 +144,18 @@ def num_points_scored(player_name)
           }
         end
         # binding.pry
+=======
+        
+        if inner_k == :players
+          inner_v.each{|player|
+            
+            binding.pry
+            
+          }
+        end
+        
+        binding.pry
+>>>>>>> 090e9fcd37eff8fa37476fc82472b0c091ef64e9
       }
     # binding.pry
   }
@@ -152,12 +165,13 @@ end
 
 def shoe_size(player_name)
   # returns the shoe size of the given player
+  shoe_size = nil
   game_hash.each{|outer_k, outer_v|
       outer_v.each{|inner_k, inner_v|
         if inner_k == :players
           inner_v.each{|player|
             if player[:player_name] == player_name
-              points = player[:shoe_size]
+              shoe_size = player[:shoe_size]
             end
             # binding.pry
           }
@@ -165,6 +179,7 @@ def shoe_size(player_name)
         # binding.pry
       }
     # binding.pry
+    shoe_size
   }
   
 end
