@@ -130,21 +130,31 @@ end
 
 # Write code here
 
-def num_points_scored(player_name)
-  points = nil
-  game_hash.each{|outer_k, outer_v|
-      outer_v.each{|inner_k, inner_v|
-        if inner_k == :players
-          inner_v.each{|player|
-            if player[:player_name] == player_name
-              points = player[:points]
-            end
-          }
-        end
-      }
-  }
-  points
+# def num_points_scored(player_name)
+#   points = nil
+#   game_hash.each{|outer_k, outer_v|
+#       outer_v.each{|inner_k, inner_v|
+#         if inner_k == :players
+#           inner_v.each{|player|
+#             if player[:player_name] == player_name
+#               points = player[:points]
+#             end
+#           }
+#         end
+#       }
+#   }
+#   points
+# end
+
+def num_points_scored(name)
+  game_hash[:away][:players].each do |player|
+    if player[:player_name] == name
+      return player[:points]
+    end
+  end
 end
+
+
 
 def shoe_size(player_name)
   # returns the shoe size of the given player
