@@ -155,7 +155,7 @@ def num_points_scored(name)
     end
   end
   return_val
-  binding.pry
+  # binding.pry
 end
 
 
